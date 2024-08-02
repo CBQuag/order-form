@@ -1,9 +1,14 @@
 import React from "react";
+import OrderEntry from "./OrderEntry";
+import OrdersDisplay from "./OrdersDisplay";
 
 const MainArea = () => {
     
     return (
-    <h1>Main Area</h1>
+        <div>
+            <OrderEntry />
+            <OrdersDisplay/>
+        </div>       
 )
 }
 
