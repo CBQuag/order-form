@@ -6,10 +6,7 @@ import Order from "./Order";
 const OrdersDisplay = () => {
     
     const { orders, setOrders} = useContext(OrderContext);
-    
-    // useEffect(() => {
-        
-    // }, [orders])
+
     
     return (
         <div>

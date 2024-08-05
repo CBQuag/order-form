@@ -20,7 +20,6 @@ const OrderEntry = () => {
             price: price
         };
         orderData.push(newOrder);
-        setOrders(orderData);
         console.log(orders)
         localStorage.setItem('order-data', JSON.stringify(orders))
     }

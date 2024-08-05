@@ -17,10 +17,10 @@ function App() {
   let orderData = JSON.parse(localStorage.getItem('order-data'));
   
   const [orders, setOrders] = useState(orderData);
-  
+  const [count, setCount] = useState(0);
   
   return (
-    <OrderContext.Provider value={{orders, setOrders, orderData}}>  
+    <OrderContext.Provider value={{orders, setOrders, orderData, count, setCount}}>  
       <div className="App">
       <Header/>
       <MainArea/>
