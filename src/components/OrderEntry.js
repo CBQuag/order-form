@@ -19,13 +19,12 @@ const OrderEntry = () => {
             quantity: quantity,
             price: price
         };
-        orderData.push(newOrder);
-        console.log(orders)
-        localStorage.setItem('order-data', JSON.stringify(orders))
+        setOrders((prev)=>[...prev, newOrder])
+
     }
     
     return (<form>
-        <ul className="order-box" >
+        <ul className="order-form" >
             <li>
                 <label htmlFor="item">Item Name: </label>
                 <input type="text" name="" id="item" onInput={e=>setItem(e.target.value)}/>  
@@ -42,8 +41,9 @@ const OrderEntry = () => {
                 <label htmlFor="item">Price: </label>
                 <input type="number" name="" id="price" onInput={e=>setPrice(e.target.value)}/>  
             </li>
+            <button type="button" className="subBut" onClick={()=>handleSubmit()}>Submit</button>
         </ul>
-        <button type="button" onClick={()=>handleSubmit()}>Submit</button>
+        
     </form>)
 
 }

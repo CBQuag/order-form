@@ -5,15 +5,24 @@ import Order from "./Order";
 
 const OrdersDisplay = () => {
     
-    const { orders, setOrders} = useContext(OrderContext);
-
+    const { orders, setOrders, shorten } = useContext(OrderContext);
     
+    useEffect(() => {
+        localStorage.setItem('order-data', JSON.stringify(orders))
+    },[orders])
+
     return (
         <div>
-            <h1>{orders.length}</h1>
-            {orders[0] ? orders.map(odata => (
+            <div className="order-box">
+                <h3>Item Name</h3>
+                <h3>Category</h3>
+                <h3>Date</h3>
+                <h3>Quantity</h3>
+                <h3>Price</h3>
+            </div>
+            {orders[0] ? orders.map((odata, index) => (
                 <Order
-                    key={orders.indexOf(odata)}
+                    key={index}
                     item={odata.item}
                     order_id={odata.order_id}
                     date={odata.date}

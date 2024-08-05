@@ -9,18 +9,20 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 function App() {
   
-  
   if (!localStorage.getItem('order-data')){
     localStorage.setItem('order-data', JSON.stringify(order_data));
   }
   
   let orderData = JSON.parse(localStorage.getItem('order-data'));
   
+  const shorten = (original, length) => {
+    return original.length > length ? `${original.slice(0,length)}...` : original;
+  }
+  
   const [orders, setOrders] = useState(orderData);
-  const [count, setCount] = useState(0);
   
   return (
-    <OrderContext.Provider value={{orders, setOrders, orderData, count, setCount}}>  
+    <OrderContext.Provider value={{orders, setOrders, orderData, shorten}}>  
       <div className="App">
       <Header/>
       <MainArea/>

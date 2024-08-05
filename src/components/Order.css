@@ -1,8 +1,12 @@
 .order-box{
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    text-align: left;
 }
-.quan{
-    display: flex;
+.order-box>p,.order-box>h3{
+    width:100px
+}
+.order-box>:nth-child(1){
+    width:150px
 }

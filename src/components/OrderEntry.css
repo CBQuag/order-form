@@ -1,3 +1,20 @@
-.order-box{
+.order-form{
+border: 1px solid black;
+margin:auto;
+padding:20px;
 list-style-type: none;
+display: flex;
+flex-direction: column;
+text-align: left;
+width:250px
+
+}
+.order-form>li{
+    display: flex;
+    justify-content: space-between;
+}
+.subBut{
+    width: 80px;
+    margin: auto;
+    margin-top:20px
 }
