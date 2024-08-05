@@ -10,6 +10,7 @@ const OrderEntry = () => {
     const [quantity, setQuantity] = useState(0);
     const [price, setPrice] = useState(0);
     
+    //on click, adds new order object into orders
     const handleSubmit = () => {
         const newOrder={
             item: item,

@@ -3,10 +3,12 @@
     justify-content: space-around;
     align-items: center;
     text-align: left;
+
 }
-.order-box>p,.order-box>h3{
+.order-box>p,.order-box>h3,button{
     width:100px
 }
-.order-box>:nth-child(1){
+
+/* .order-box>:nth-child(1){
     width:150px
-}
+} */

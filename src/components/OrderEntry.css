@@ -10,6 +10,7 @@ width:250px
 
 }
 .order-form>li{
+    padding-top: 7px;
     display: flex;
     justify-content: space-between;
 }

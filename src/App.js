@@ -9,10 +9,11 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 function App() {
   
+  
+  //seed in default data if there is no order-data localstorage item
   if (!localStorage.getItem('order-data')){
     localStorage.setItem('order-data', JSON.stringify(order_data));
   }
-  
   let orderData = JSON.parse(localStorage.getItem('order-data'));
   
   const shorten = (original, length) => {

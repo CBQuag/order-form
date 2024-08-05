@@ -7,9 +7,10 @@ const OrdersDisplay = () => {
     
     const { orders, setOrders, shorten } = useContext(OrderContext);
     
+    //when orders is updated, update the permanent log
     useEffect(() => {
         localStorage.setItem('order-data', JSON.stringify(orders))
-    },[orders])
+    }, [orders])
 
     return (
         <div>
@@ -19,9 +20,11 @@ const OrdersDisplay = () => {
                 <h3>Date</h3>
                 <h3>Quantity</h3>
                 <h3>Price</h3>
+                <h3></h3>
             </div>
             {orders[0] ? orders.map((odata, index) => (
-                <Order
+                    <Order
+                    style={{ backgroundColor: index % 2 == 0 ? '#dbdbdb' : '#ffffff' }}
                     key={index}
                     item={odata.item}
                     order_id={odata.order_id}
@@ -29,6 +32,7 @@ const OrdersDisplay = () => {
                     category={odata.category}
                     quantity={odata.quantity}
                     price={odata.price} />
+                
             )):'null'}
         </div>
     )
