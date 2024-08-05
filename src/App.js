@@ -9,10 +9,18 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 function App() {
   
-  const [orders, setOrders] = useState(order_data);
+  
+  if (!localStorage.getItem('order-data')){
+    localStorage.setItem('order-data', JSON.stringify(order_data));
+  }
+  
+  let orderData = JSON.parse(localStorage.getItem('order-data'));
+  
+  const [orders, setOrders] = useState(orderData);
+  
   
   return (
-    <OrderContext.Provider value={{orders, setOrders}}>  
+    <OrderContext.Provider value={{orders, setOrders, orderData}}>  
       <div className="App">
       <Header/>
       <MainArea/>

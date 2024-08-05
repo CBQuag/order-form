@@ -5,23 +5,27 @@ import Order from "./Order";
 
 const OrdersDisplay = () => {
     
-    const { orders } = useContext(OrderContext);
+    const { orders, setOrders} = useContext(OrderContext);
+    
+    // useEffect(() => {
+        
+    // }, [orders])
     
     return (
         <div>
-            {orders[0] ? orders.map(order_data => (
+            <h1>{orders.length}</h1>
+            {orders[0] ? orders.map(odata => (
                 <Order
-                    key={orders.indexOf(order_data)}
-                    item={order_data.item}
-                    order_id={order_data.order_id}
-                    date={order_data.date}
-                    category={order_data.category}
-                    quantity={order_data.quantity}
-                    price={order_data.price} />
-            )):null}
+                    key={orders.indexOf(odata)}
+                    item={odata.item}
+                    order_id={odata.order_id}
+                    date={odata.date}
+                    category={odata.category}
+                    quantity={odata.quantity}
+                    price={odata.price} />
+            )):'null'}
         </div>
-)
+    )
 }
-
 
 export default OrdersDisplay;
