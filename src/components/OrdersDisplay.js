@@ -13,7 +13,7 @@ const OrdersDisplay = () => {
     }, [orders])
 
     return (
-        <div>
+        <div className="whole-order-box">
             <div className="order-box">
                 <h3>Item Name</h3>
                 <h3>Category</h3>

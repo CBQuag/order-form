@@ -3,10 +3,17 @@
     justify-content: space-around;
     align-items: center;
     text-align: left;
-
 }
 .order-box>p,.order-box>h3,button{
-    width:100px
+    width:100px;
+
+}
+
+.whole-order-box{
+
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
 }
 
 /* .order-box>:nth-child(1){
