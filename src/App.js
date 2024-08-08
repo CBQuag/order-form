@@ -1,11 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
-import MainArea from './components/MainArea';
+import Root from './components/Root';
+import Calendar from './components/Calendar'
+import OrderList from './components/OrderList';
 import OrderContext from './context/OrderContext';
 import order_data from './context/order-data';
+import Home from './components/Home';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route
+} from "react-router-dom";
+
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState
+} from 'react';
+
 
 function App() {
   
@@ -20,14 +35,23 @@ function App() {
     return original.length > length ? `${original.slice(0,length)}...` : original;
   }
   
+  //loading order state from localstorage
   const [orders, setOrders] = useState(orderData);
   
+  //initializing routes
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      
+      {<Route path="" element={<Home />} />}
+      {<Route path="orders" element={<OrderList />} />}
+      {<Route path="calendar" element={<Calendar />} />}
+    </Route>
+  ))
+  
+  //giving context and starting routes at Root
   return (
-    <OrderContext.Provider value={{orders, setOrders, orderData, shorten}}>  
-      <div className="App">
-      <Header/>
-      <MainArea/>
-    </div>
+    <OrderContext.Provider value={{ orders, setOrders, orderData, shorten }}>  
+      <RouterProvider router={router}/>
     </OrderContext.Provider>
     
   );
