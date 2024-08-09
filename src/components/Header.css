@@ -3,6 +3,12 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    background-color: aliceblue;
+    position: fixed;
+    width: 100%;
+}
+.menu{
+    padding-right: 30px;
 }
 .menu>*{
     padding-right: 10px;

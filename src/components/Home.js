@@ -1,9 +1,10 @@
 
+import './Home.css'
 
 export default function Home() {
 
     return (
-        <div>
+        <div className="home">
             Please make a selection
         </div>
     )
