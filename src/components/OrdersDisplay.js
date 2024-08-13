@@ -5,9 +5,14 @@ import Order from "./Order";
 
 const OrdersDisplay = () => {
     
-    const { orders, setOrders, shorten } = useContext(OrderContext);
+    const { orders, setOrders, shorten, daySelection, setDayView, datediff } = useContext(OrderContext);
     
-    
+    const checkDay = (prev, current) => {
+        const newTime = current ? current.day.getTime() : null;
+        console.log(datediff(prev, newTime)==0)
+        return true
+    }
+    //trying to limit by day
 
     return (
         <div className="whole-order-box">
@@ -19,7 +24,9 @@ const OrdersDisplay = () => {
                 <h3>Price</h3>
                 <h3></h3>
             </div>
-            {orders[0] ? orders.map((odata, index) => (
+            {orders[0] ? orders
+                // .filter(ords => { checkDay(ords.date, daySelection) })
+                .map((odata, index) => (
                     <Order
                     style={{ backgroundColor: index % 2 == 0 ? '#dbdbdb' : '#ffffff' }}
                     key={index}

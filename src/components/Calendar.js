@@ -10,20 +10,14 @@ export default function Calendar() {
     
     const [dayList, setDayList] = useState([])
     const [monthChange, changeMonth] = useState(0)
-    const { orderData, orders, total } = useContext(OrderContext)
+    const { orderData, orders, total, daySelection, setDayView, datediff } = useContext(OrderContext)
     
     //gets the total number of days in given month by finding the 0th day of the next month
     //(the last day of the current month)
     const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     
-    function datediff(first, second) {
-        let fDate = new Date(first) 
-        let sDate = new Date(second)
-        let cleanFDate = new Date(fDate.getFullYear(), fDate.getMonth(), fDate.getDate())
-        let cleanSDate=new Date(sDate.getFullYear(), sDate.getMonth(), sDate.getDate())
-        return Math.round((cleanSDate.getTime() - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) );
-    }
+    
     
     const drawCalendar = (dateInt) => {
 
@@ -114,7 +108,9 @@ export default function Calendar() {
             </div>
             <div className='day-area'>
                 {dayList? dayList.map((day, index) => (
-                    <div className='day' key={index}
+                    <div className='day'
+                        key={index}
+                        onClick={()=>setDayView(day)}
                         style={{
                             backgroundColor:day.color[0],
                             color:day.color[1],

@@ -38,7 +38,21 @@ function App() {
   
   //loading order state from localstorage
   const [orders, setOrders] = useState(orderData);
-  const [total, setTotal]=useState(orderData)
+  const [total, setTotal] = useState(orderData);
+  const [daySelection, setDayView] = useState(null);
+  
+  function datediff(first, second) {
+        let fDate = new Date(first) 
+        let sDate = new Date(second)
+        let cleanFDate = new Date(fDate.getFullYear(), fDate.getMonth(), fDate.getDate())
+        let cleanSDate=new Date(sDate.getFullYear(), sDate.getMonth(), sDate.getDate())
+        return Math.round((cleanSDate.getTime() - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) );
+    }
+  
+  useEffect(() => {
+  // console.log(daySelection)
+  
+  }, [daySelection])
   
   //when orders is updated, update the permanent log
   useEffect(() => {
@@ -59,7 +73,7 @@ function App() {
   
   //giving context and starting routes at Root
   return (
-    <OrderContext.Provider value={{ orders, setOrders, orderData, shorten, total }}>  
+    <OrderContext.Provider value={{ orders, setOrders, orderData, shorten, total, daySelection, setDayView, datediff }}>  
       <RouterProvider router={router}/>
     </OrderContext.Provider>
     
