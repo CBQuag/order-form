@@ -8,15 +8,15 @@ const order_data = [
     price: 23
 },
     {
-    item: 'item-name',
+    item: 'item-name_1',
     order_id: 0,
     date: (Date.now()-200000000),
     category: 'business',
-    quantity: 87,
+    quantity: 150,
     price: 23
 },
     {
-    item: 'item-name',
+    item: 'item-name_2',
     order_id: 0,
     date: (Date.now()-100000000),
     category: 'business',
@@ -24,7 +24,7 @@ const order_data = [
     price: 23
 },
     {
-        item: 'item-name_2',
+        item: 'item-name_3',
         order_id: 1,
         date: Date.now(),
     category: 'pleasure',
