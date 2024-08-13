@@ -1,0 +1,11 @@
+.entrybox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entrybox>*{
+margin: 0px 40px;
+}
+.empty{
+    width: 320px;
+}

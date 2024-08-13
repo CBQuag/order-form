@@ -7,10 +7,7 @@ const OrdersDisplay = () => {
     
     const { orders, setOrders, shorten } = useContext(OrderContext);
     
-    //when orders is updated, update the permanent log
-    useEffect(() => {
-        localStorage.setItem('order-data', JSON.stringify(orders))
-    }, [orders])
+    
 
     return (
         <div className="whole-order-box">

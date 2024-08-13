@@ -1,5 +1,50 @@
-
 .calendar{
-display: flex;
-justify-content: center;
+    min-width: 322px;
+    width:322px;
+    border: 1px solid black;
+    padding: 20px;
+}
+.navigation{
+    border: none;
+}
+.day-area{
+    display: flex;
+    flex-wrap: wrap;
+}
+.day{
+    font-weight: 900;
+    color: white;
+    width: 34px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid gray;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(69, 69, 69);
+}
+
+.month-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -15px;
+    margin-bottom: -10px;
+}
+
+.navigation{
+    background-color: rgba(0, 0, 0, 0);
+    width: 33px;
+}
+.nav-icon-left{
+    transform: rotate(-90deg);
+}
+.nav-icon-right{  
+    transform: rotate(90deg);
+}
+
+.nav-icon-right,.nav-icon-left{
+    width: 20px;
+    filter: invert(0.5);
+}
+.nav-icon-right:hover,.nav-icon-left:hover{
+    filter: invert(0.95);
 }

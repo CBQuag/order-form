@@ -1,18 +1,35 @@
-const order_data = [{
+const order_data = [
+    {
+    item: 'item-name',
+    order_id: 0,
+    date: (Date.now()-500000000),
+    category: 'business',
+    quantity: 87,
+    price: 23
+},
+    {
+    item: 'item-name',
+    order_id: 0,
+    date: (Date.now()-200000000),
+    category: 'business',
+    quantity: 87,
+    price: 23
+},
+    {
     item: 'item-name',
     order_id: 0,
     date: (Date.now()-100000000),
     category: 'business',
-    quantity: 0,
-    price: 0
+    quantity: 87,
+    price: 23
 },
     {
         item: 'item-name_2',
         order_id: 1,
         date: Date.now(),
     category: 'pleasure',
-    quantity: 0,
-    price: 0
+    quantity: 23,
+    price: 344
     }
 
 ]

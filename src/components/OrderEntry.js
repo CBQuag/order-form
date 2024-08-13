@@ -21,7 +21,6 @@ const OrderEntry = () => {
             price: price
         };
         setOrders((prev)=>[...prev, newOrder])
-
     }
     
     return (<form>

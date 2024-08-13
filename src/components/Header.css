@@ -3,7 +3,7 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    background-color: aliceblue;
+    background-color: rgb(205, 205, 205);
     position: fixed;
     width: 100%;
 }
