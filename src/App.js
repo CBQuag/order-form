@@ -46,7 +46,6 @@ function App() {
         let sDate = new Date(second)
         let cleanFDate = new Date(fDate.getFullYear(), fDate.getMonth(), fDate.getDate())
         let cleanSDate = new Date(sDate.getFullYear(), sDate.getMonth(), sDate.getDate())
-        // console.log(Math.round((cleanSDate.getTime() - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) ))
         return Math.round((cleanSDate.getTime() - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) );
     }
 

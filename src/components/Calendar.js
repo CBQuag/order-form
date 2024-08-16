@@ -6,7 +6,8 @@ import { useState, useContext, useEffect } from 'react'
 export default function Calendar() {
     
     const intensity = 2
-    const rgb=[60,0,140]
+    const rgb = [60, 0, 140];
+    const dayColor = '';
     
     const [dayList, setDayList] = useState([])
     const [monthChange, changeMonth] = useState(0)
@@ -59,7 +60,7 @@ export default function Calendar() {
                     `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
                         ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity}, 
                         ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
-                    ``,
+                    `${dayColor}`,
                     //adds border to days with data
                     colorNum > 0 ? `2px solid black` : 'none']
             })
