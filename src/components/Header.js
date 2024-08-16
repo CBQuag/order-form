@@ -8,7 +8,7 @@ import order_data from "../context/order-data";
 
 const Header = () => {
     
-    const {shorten, setOrders, orders}=useContext(OrderContext)
+    const {setOrders}=useContext(OrderContext)
     const handleClick = () => {
         setOrders(order_data)
     }

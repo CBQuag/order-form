@@ -26,11 +26,11 @@ const OrdersDisplay = () => {
     return (
         <div className="whole-order-box">
             <div className="order-box">
-                <h3>Item Name</h3>
-                <h3>Category</h3>
-                <h3>Date</h3>
-                <h3>Quantity</h3>
-                <h3>Price</h3>
+                <h3 onClick={()=>{console.log('I should sort when clicked')}}>Item Name</h3>
+                <h3 onClick={()=>{console.log('I should sort when clicked')}}>Category</h3>
+                <h3 onClick={()=>{console.log('I should sort when clicked')}}>Date</h3>
+                <h3 onClick={()=>{console.log('I should sort when clicked')}}>Quantity</h3>
+                <h3 onClick={()=>{console.log('I should sort when clicked')}}>Price</h3>
                 <h3></h3>
             </div>
             {daysList[0] ? daysList
