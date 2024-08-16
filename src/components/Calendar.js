@@ -76,7 +76,7 @@ export default function Calendar() {
         //adds in trailing days
         for (let x = 1; x < 7 - lastDay.getDay(); x++){
             const oneDay = new Date(year, month, x)
-            days.push({ day: oneDay, color: ['black', 'gray','none'] })
+            days.push({ day: oneDay, color: ['gray', 'dimgray','none'] })
         }
         setDayList(days)
         
