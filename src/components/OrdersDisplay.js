@@ -45,7 +45,7 @@ const OrdersDisplay = () => {
                     quantity={odata.quantity}
                     price={odata.price} />
                 
-                )) : <h1 className="no-data">{daySelection?'No orders for selected day':'No orders'}</h1>}
+                )) : <h1 className="no-data">{daySelection&&orders[0]?'No orders for selected day':'No orders'}</h1>}
         </div>
     )
 }

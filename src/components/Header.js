@@ -13,18 +13,10 @@ const Header = () => {
                 <NavLink    to="orders"
                             className={({ isActive }) => isActive ? 'activeNavLink' : 'inactiveNavLink'}>
                                 Orders</NavLink>
-                <NavLink    to="calendar"
+                {/* <NavLink    to="calendar"
                             className={({ isActive }) => isActive ? 'activeNavLink' : 'inactiveNavLink'}>
-                                Calendar</NavLink>
+                                Calendar</NavLink> */}
             </div>
-        {/* {
-            currentUser.username
-            ? <>
-                <a href="/profile">Profile</a>
-                <button onClick={handleLogout} className="logout"> Log Out </button>
-                </>
-            : <a href="/sign-up">Sign Up</a>
-        } */}
     </div>
 )
 }

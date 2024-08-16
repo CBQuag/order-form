@@ -56,8 +56,9 @@ export default function Calendar() {
             days.push({
                 day: oneDay,
                 color: [
-                    `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity}, ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity}, ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
-                    // `${colorNum>80?'blue':'white'}`,
+                    `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
+                        ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity}, 
+                        ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
                     ``,
                     //adds border to days with data
                     colorNum > 0 ? `2px solid black` : 'none']
@@ -115,7 +116,7 @@ export default function Calendar() {
                         style={{
                             backgroundColor:day.color[0],
                             color:day.color[1],
-                            outline:!daySelection?day.color[2]:datediff(day.day,daySelection)==0?day.color[2]:null
+                            outline:!daySelection?day.color[2]:datediff(day.day,daySelection)==0?`2px solid black`:null
                         }}>
                         {day.day.getDate()}
                     </div>)) : null}
