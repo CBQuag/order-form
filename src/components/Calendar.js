@@ -57,9 +57,12 @@ export default function Calendar() {
             days.push({
                 day: oneDay,
                 color: [
-                    `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
-                        ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity}, 
-                        ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
+                    // `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
+                    //     ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity},
+                    //     ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
+                    `rgb(${256-(colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
+                         ${256-(colorNum * ((256 - rgb[1]) / 256)) * intensity}, 
+                         ${256-(colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
                     `${dayColor}`,
                     //adds border to days with data
                     colorNum > 0 ? `2px solid black` : 'none']
