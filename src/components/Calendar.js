@@ -11,14 +11,22 @@ export default function Calendar() {
     
     const [dayList, setDayList] = useState([])
     const [monthChange, changeMonth] = useState(0)
-    const { orderData, orders, total, daySelection, setDayView, datediff } = useContext(OrderContext)
+    const { orderData, orders, total, daySelection, setDayView, datediff, viewMode } = useContext(OrderContext)
     
     //gets the total number of days in given month by finding the 0th day of the next month
     //(the last day of the current month)
     const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     
-    
+    const calendarMode = (colorNum) => {
+        return viewMode == 'light'||!viewMode ?
+            `rgb(${256 - (colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
+                 ${256 - (colorNum * ((256 - rgb[1]) / 256)) * intensity}, 
+                 ${256 - (colorNum * ((256 - rgb[2]) / 256)) * intensity})` :
+            `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
+                 ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity},
+                 ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`;
+    }
     
     const drawCalendar = (dateInt) => {
 
@@ -57,12 +65,8 @@ export default function Calendar() {
             days.push({
                 day: oneDay,
                 color: [
-                    // `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
-                    //     ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity},
-                    //     ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
-                    `rgb(${256-(colorNum * ((256 - rgb[0]) / 256)) * intensity}, 
-                         ${256-(colorNum * ((256 - rgb[1]) / 256)) * intensity}, 
-                         ${256-(colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
+                    calendarMode(colorNum)
+                    ,
                     `${dayColor}`,
                     //adds border to days with data
                     colorNum > 0 ? `2px solid black` : 'none']

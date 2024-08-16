@@ -40,6 +40,7 @@ function App() {
   const [orders, setOrders] = useState(orderData);
   const [total, setTotal] = useState(orderData);
   const [daySelection, setDayView] = useState(null);
+  const [viewMode, setViewMode] = useState('light');
   
   function datediff(first, second) {
         let fDate = new Date(first) 
