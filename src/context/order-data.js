@@ -9,7 +9,7 @@ const order_data = [
 },
     {
     item: 'item-name_1',
-    order_id: 0,
+    order_id: 1,
     date: (Date.now()-200000000),
     category: 'business',
     quantity: 150,
@@ -17,7 +17,7 @@ const order_data = [
 },
     {
     item: 'item-name_2',
-    order_id: 0,
+    order_id: 2,
     date: (Date.now()-100000000),
     category: 'business',
     quantity: 87,
@@ -25,7 +25,7 @@ const order_data = [
 },
     {
         item: 'item-name_3',
-        order_id: 1,
+        order_id: 3,
         date: Date.now(),
     category: 'pleasure',
     quantity: 23,
