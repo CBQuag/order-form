@@ -48,7 +48,7 @@ export default function Calendar() {
         //fills in this month with last month's carry over days
          for (let x = carryOver; x <= lastMonth; x++){
             const oneDay = new Date(year, month-1, x)
-            days.push({ day: oneDay, color: ['black','gray',`none`] })
+            days.push({ day: oneDay, color: ['gray','dimgray',`none`] })
          }
         
         //fills in the current month's days
