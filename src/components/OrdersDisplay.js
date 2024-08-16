@@ -21,7 +21,7 @@ const OrdersDisplay = () => {
         } else {
             setDaysList(orders)
         }
-    },[daySelection])
+    },[daySelection,orders])
 
     return (
         <div className="whole-order-box">
