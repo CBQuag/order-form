@@ -45,14 +45,11 @@ function App() {
         let fDate = new Date(first) 
         let sDate = new Date(second)
         let cleanFDate = new Date(fDate.getFullYear(), fDate.getMonth(), fDate.getDate())
-        let cleanSDate=new Date(sDate.getFullYear(), sDate.getMonth(), sDate.getDate())
+        let cleanSDate = new Date(sDate.getFullYear(), sDate.getMonth(), sDate.getDate())
+        // console.log(Math.round((cleanSDate.getTime() - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) ))
         return Math.round((cleanSDate.getTime() - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) );
     }
-  
-  useEffect(() => {
-  // console.log(daySelection)
-  
-  }, [daySelection])
+
   
   //when orders is updated, update the permanent log
   useEffect(() => {

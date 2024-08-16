@@ -11,7 +11,8 @@ const Order = (props) => {
    
     
     const handleDelete = (id) => {
-        const newOrder = orders.filter((item) => item.order_id !== id);
+        const newOrder = [...orders].filter((item) => item.order_id !== id);
+        console.log(newOrder)
         setOrders(newOrder);
     }
     

@@ -6,7 +6,7 @@ import { useState, useContext, useEffect } from 'react'
 export default function Calendar() {
     
     const intensity = 2
-    const rgb=[30,64,128]
+    const rgb=[60,0,140]
     
     const [dayList, setDayList] = useState([])
     const [monthChange, changeMonth] = useState(0)
@@ -60,17 +60,25 @@ export default function Calendar() {
                     // `${colorNum>80?'blue':'white'}`,
                     ``,
                     //adds border to days with data
-                    colorNum > 0 ? `2px solid black` : `${datediff(oneDay,Date.now())==0?'2px solid gray':'none'}`]
+                    colorNum > 0 ? `2px solid black` : 'none']
             })
             
         }
         //adds in trailing days
         for (let x = 1; x < 7 - lastDay.getDay(); x++){
             const oneDay = new Date(year, month, x)
-            days.push({ day: oneDay, color: ['black', 'gray',`none`] })
+            days.push({ day: oneDay, color: ['black', 'gray','none'] })
         }
         setDayList(days)
         
+    }
+    
+    const handleDayClick = (day) => {
+        if (!daySelection || day != daySelection) {
+            setDayView(day)
+        } else {
+            setDayView(null)
+        }
     }
 
     //draws calendar
@@ -91,30 +99,23 @@ export default function Calendar() {
             <div className='month-area'>
                 <button
                     onClick={() => changeMonth(monthChange - 1)}
-                    className='navigation nav-left'>◀
-                    {/* <img
-                        className='nav-icon-left'
-                        src={require('../triangle.png')} alt="left" /> */}
-                    
+                    className='navigation nav-left'>◀  
                 </button>
                 <h2>{dayList[10]?monthNames[dayList[10].day.getMonth()]:null}</h2>
                 <button
                     onClick={() => changeMonth(monthChange + 1)}
                     className='navigation nav-right'>▶
-                    {/* <img
-                        className='nav-icon-right'
-                        src={require('../triangle.png')} alt="left" /> */}
                 </button>
             </div>
             <div className='day-area'>
                 {dayList? dayList.map((day, index) => (
                     <div className='day'
                         key={index}
-                        onClick={()=>setDayView(day)}
+                        onClick={()=>handleDayClick(day.day.getTime())}
                         style={{
                             backgroundColor:day.color[0],
                             color:day.color[1],
-                            outline:day.color[2]
+                            outline:!daySelection?day.color[2]:datediff(day.day,daySelection)==0?day.color[2]:null
                         }}>
                         {day.day.getDate()}
                     </div>)) : null}

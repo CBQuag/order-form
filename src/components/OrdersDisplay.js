@@ -7,12 +7,21 @@ const OrdersDisplay = () => {
     
     const { orders, setOrders, shorten, daySelection, setDayView, datediff } = useContext(OrderContext);
     
-    const checkDay = (prev, current) => {
-        const newTime = current ? current.day.getTime() : null;
-        console.log(datediff(prev, newTime)==0)
-        return true
+    const [daysList, setDaysList] = useState(orders);
+    const checkDay = (prev) => {
+        const current = datediff(prev.date, daySelection) == 0;
+        return current
     }
-    //trying to limit by day
+    
+   
+    useEffect(() => {
+        const newList = [...orders].filter(checkDay)
+        if (daySelection) {
+            setDaysList(newList)
+        } else {
+            setDaysList(orders)
+        }
+    },[daySelection])
 
     return (
         <div className="whole-order-box">
@@ -24,8 +33,7 @@ const OrdersDisplay = () => {
                 <h3>Price</h3>
                 <h3></h3>
             </div>
-            {orders[0] ? orders
-                // .filter(ords => { checkDay(ords.date, daySelection) })
+            {daysList[0] ? daysList
                 .map((odata, index) => (
                     <Order
                     style={{ backgroundColor: index % 2 == 0 ? '#dbdbdb' : '#ffffff' }}
@@ -37,7 +45,7 @@ const OrdersDisplay = () => {
                     quantity={odata.quantity}
                     price={odata.price} />
                 
-            )):'null'}
+                )) : <h1 className="no-data">{daySelection?'No orders for selected day':'No orders'}</h1>}
         </div>
     )
 }
