@@ -52,6 +52,7 @@ const OrdersDisplay = () => {
     return (
         <div className="whole-order-box">
             <div className="order-box">
+                
                 <h3 onClick={()=>{console.log('I should sort when clicked')}}>Item Name</h3>
                 <h3 onClick={()=>{console.log('I should sort when clicked')}}>Category</h3>
                 <h3 onClick={()=>{console.log('I should sort when clicked')}}>Date</h3>
