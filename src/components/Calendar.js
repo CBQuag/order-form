@@ -117,8 +117,8 @@ export default function Calendar() {
     }, [monthChange])
     
     const monthStyle = {
-        fontWeight: 800,
-        textShadow: '1px 1px 1px gray'
+        fontWeight: 900,
+        textDecoration: 'underline'
     }
     
     return (
@@ -130,11 +130,11 @@ export default function Calendar() {
                     className='navigation nav-left'>◀  
                 </button>
                 <div className='monthyear'>
-                    <h2
+                    <h2 className='month'
                         style={ !dayList[10]?null:monthSelection == dayList[10].day.getMonth() ? monthStyle : null }
                         onClick={() => handleMonthClick(dayList[10].day.getMonth())}>{dayList[10] ? monthNames[dayList[10].day.getMonth()] : null}
                     </h2>
-                    <h2>{dayList[10].day.getFullYear() }</h2>
+                    <h2>{dayList[10]?dayList[10].day.getFullYear():null}</h2>
                 </div>
                 <button
                     onClick={() => changeMonth(monthChange + 1)}

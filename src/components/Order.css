@@ -19,6 +19,11 @@
     border: 1px solid black;
 }
 
-/* .order-box>:nth-child(1){
-    width:150px
-} */
+.order-box>button{
+    height: 40px;
+    border: none;
+    background: none;
+}
+.order-box>button:hover{
+    scale: 1.3;
+}

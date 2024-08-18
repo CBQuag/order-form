@@ -23,7 +23,7 @@ const Order = (props) => {
             <p>{`${converted.getMonth()+1}/${converted.getDate()}/${converted.getFullYear()}`}</p>
             <p>{props.quantity}</p>
             <p>{`$${props.price}`}</p>
-            <button onClick={()=>handleDelete(props.order_id)}>X</button>
+            <button onClick={()=>handleDelete(props.order_id)}>&#10006;</button>
         </div>
 )
 }
