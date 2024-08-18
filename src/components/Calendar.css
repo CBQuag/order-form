@@ -48,3 +48,12 @@
 .nav-icon-right:hover,.nav-icon-left:hover{
     filter: invert(0.95);
 }
+.daynames{
+display: flex;
+justify-content: space-between;
+margin: -25px 13px -10px 13px;
+}
+.dayname{
+width: 20px;
+text-align: center;
+}

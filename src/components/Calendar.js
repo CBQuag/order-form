@@ -48,7 +48,7 @@ export default function Calendar() {
         //fills in this month with last month's carry over days
          for (let x = carryOver; x <= lastMonth; x++){
             const oneDay = new Date(year, month-1, x)
-            days.push({ day: oneDay, color: ['gray','dimgray',`none`] })
+            days.push({ day: oneDay, color: ['lightgray','silver',`none`] })
          }
         
         //fills in the current month's days
@@ -76,7 +76,7 @@ export default function Calendar() {
         //adds in trailing days
         for (let x = 1; x < 7 - lastDay.getDay(); x++){
             const oneDay = new Date(year, month, x)
-            days.push({ day: oneDay, color: ['gray', 'dimgray','none'] })
+            days.push({ day: oneDay, color: ['lightgray', 'silver','none'] })
         }
         setDayList(days)
         
@@ -115,6 +115,15 @@ export default function Calendar() {
                     onClick={() => changeMonth(monthChange + 1)}
                     className='navigation nav-right'>▶
                 </button>
+            </div>
+            <div className='daynames'>
+                <h3 className="dayname">S</h3>
+                <h3 className="dayname">M</h3>
+                <h3 className="dayname">T</h3>
+                <h3 className="dayname">W</h3>
+                <h3 className="dayname">T</h3>
+                <h3 className="dayname">F</h3>
+                <h3 className="dayname">S</h3>
             </div>
             <div className='day-area'>
                 {dayList? dayList.map((day, index) => (
