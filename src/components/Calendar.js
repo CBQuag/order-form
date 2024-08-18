@@ -129,9 +129,13 @@ export default function Calendar() {
                     onClick={() => changeMonth(monthChange - 1)}
                     className='navigation nav-left'>◀  
                 </button>
-                <h2
-                    style={ !dayList[10]?null:monthSelection == dayList[10].day.getMonth() ? monthStyle : null }
-                    onClick={() => handleMonthClick(dayList[10].day.getMonth())}>{dayList[10] ? monthNames[dayList[10].day.getMonth()] : null}</h2>
+                <div className='monthyear'>
+                    <h2
+                        style={ !dayList[10]?null:monthSelection == dayList[10].day.getMonth() ? monthStyle : null }
+                        onClick={() => handleMonthClick(dayList[10].day.getMonth())}>{dayList[10] ? monthNames[dayList[10].day.getMonth()] : null}
+                    </h2>
+                    <h2>{dayList[10].day.getFullYear() }</h2>
+                </div>
                 <button
                     onClick={() => changeMonth(monthChange + 1)}
                     className='navigation nav-right'>▶
