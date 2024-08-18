@@ -11,7 +11,12 @@ export default function Calendar() {
     
     const [dayList, setDayList] = useState([])
     const [monthChange, changeMonth] = useState(0)
-    const { orderData, orders, total, daySelection, setDayView, datediff, viewMode } = useContext(OrderContext)
+    const { orderData, orders,
+            daySelection, setDayView,
+            monthSelection, setMonthView,
+            total,
+            datediff,
+            viewMode } = useContext(OrderContext)
     
     //gets the total number of days in given month by finding the 0th day of the next month
     //(the last day of the current month)
@@ -88,6 +93,15 @@ export default function Calendar() {
         } else {
             setDayView(null)
         }
+        
+    }
+
+    const handleMonthClick = (month) => {   
+        if (!monthSelection || month != monthSelection) {
+            setMonthView(month)
+        } else {
+            setMonthView(null)
+        }
     }
 
     //draws calendar
@@ -102,6 +116,11 @@ export default function Calendar() {
         drawCalendar(changedDate.getTime())    
     }, [monthChange])
     
+    const monthStyle = {
+        fontWeight: 800,
+        textShadow: '1px 1px 1px gray'
+    }
+    
     return (
         
         <div className="calendar">
@@ -110,7 +129,9 @@ export default function Calendar() {
                     onClick={() => changeMonth(monthChange - 1)}
                     className='navigation nav-left'>◀  
                 </button>
-                <h2>{dayList[10]?monthNames[dayList[10].day.getMonth()]:null}</h2>
+                <h2
+                    style={ !dayList[10]?null:monthSelection == dayList[10].day.getMonth() ? monthStyle : null }
+                    onClick={() => handleMonthClick(dayList[10].day.getMonth())}>{dayList[10] ? monthNames[dayList[10].day.getMonth()] : null}</h2>
                 <button
                     onClick={() => changeMonth(monthChange + 1)}
                     className='navigation nav-right'>▶

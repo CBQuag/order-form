@@ -40,6 +40,7 @@ function App() {
   const [orders, setOrders] = useState(orderData);
   const [total, setTotal] = useState(orderData);
   const [daySelection, setDayView] = useState(null);
+  const [monthSelection, setMonthView] = useState(null);
   const [viewMode, setViewMode] = useState('light');
   
   function datediff(first, second) {
@@ -70,7 +71,15 @@ function App() {
   
   //giving context and starting routes at Root
   return (
-    <OrderContext.Provider value={{ orders, setOrders, orderData, shorten, total, daySelection, setDayView, datediff }}>  
+    <OrderContext.Provider value={{
+      orders, setOrders,
+      monthSelection, setMonthView,
+      daySelection, setDayView,
+      orderData,
+      shorten,
+      total,
+      datediff
+    }}>  
       <RouterProvider router={router}/>
     </OrderContext.Provider>
     

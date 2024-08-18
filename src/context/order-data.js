@@ -2,7 +2,7 @@ const order_data = [
     {
     item: 'item-name',
     order_id: 0,
-    date: (Date.now()-500000000),
+    date: (Date.now()-2000000000),
     category: 'business',
     quantity: 87,
     price: 23
