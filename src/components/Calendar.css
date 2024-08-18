@@ -1,7 +1,7 @@
 .calendar{
     min-width: 322px;
     width:322px;
-    height: 330px;
+    /* height: 315px; */
     border: 1px solid black;
     padding: 20px;
 }
@@ -13,10 +13,11 @@
     flex-wrap: wrap;
 }
 .day{
+    padding: 0px 3px;
     font-weight: 900;
     color: white;
-    width: 34px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     margin: 5px;
     border: 1px solid gray;
     -webkit-text-stroke-width: 1px;

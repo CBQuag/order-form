@@ -10,8 +10,10 @@ export default function OrderList(){
         <div>
             <div className="entrybox">
             <div className="empty"></div>
-            <OrderEntry />
-            <Calendar/>
+                <OrderEntry />
+                <div className="calendarbox">
+                <Calendar/>
+                </div>
             </div>
             <OrdersDisplay/>
         </div>
