@@ -19,6 +19,7 @@ const Order = (props) => {
     return (
         <div className="order-box" style={props.style}>
             
+            
             <p>{shorten(props.item,20)}</p>
             <p>{props.category}</p>
             <p>{`${converted.getMonth()+1}/${converted.getDate()}/${converted.getFullYear()}`}</p>
