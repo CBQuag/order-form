@@ -1,6 +1,6 @@
 .calendar{
     min-width: 322px;
-    width:322px;
+    width:327px;
     /* height: 315px; */
     border: 1px solid black;
     padding: 20px;
@@ -19,9 +19,11 @@
     padding: 0px 3px;
     font-weight: 900;
     color: white;
-    width: 28px;
+
     height: 28px;
-    margin: 5px;
+    margin: 1%;
+    flex: 1;
+    flex-basis: 8%;
     border: 1px solid gray;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(69, 69, 69);
